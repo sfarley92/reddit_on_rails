@@ -7,16 +7,22 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new(params[:links])
+    @link = Link.new(link_params)
 
-respond_to do |format|
-  if @link.save
-    format.html { render :action => "show" }
-    format.json { render :json => @link }
-  else
-    format.html { render :action => "new" }
-    format.json { render :json => @link.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @link.save
+        format.html { render :action => "show" }
+        format.json { render :json => @link }
+      else
+        format.html { render :action => "new" }
+        format.json { render :json => @link.errors, status: :unprocessable_entity }
+      end
+    end
   end
-end
+
+  private
+
+  def link_params
+    params.require(:link).permit(:title, :url)
   end
 end
