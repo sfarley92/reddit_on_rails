@@ -10,6 +10,13 @@
 
 <ul>
   <% @links.each do |link| %>
-  <li> <%= link_to link.title, link.url %> </li>
+  <li><%= link_to link.title, link.url %></li> -->
+    <%= link_to 'comments', links_path(:id => link.id) %>
   <% end %>
 </ul>
+
+<!-- <p>
+  <%= link_to 'comments', links_path %>
+</p> -->
+
+<%= will_paginate @links %>
