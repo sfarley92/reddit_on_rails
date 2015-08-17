@@ -12,6 +12,31 @@
     <%= @link.url %>
 </p>
 
+<%= form_for(@comment) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+
+<p>
+    <b>comments</b>
+    <%= @comment %>
+    <ul>
+      <%= @comment.each do |c| %>
+      <li><%= c %></li>
+      <% end %>
+    </ul>
+</p>
+
 <p>
   <%= link_to 'Homepage', pages_path %>
 </p>
