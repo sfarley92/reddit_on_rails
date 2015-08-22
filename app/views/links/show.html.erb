@@ -12,29 +12,28 @@
     <%= @link.url %>
 </p>
 
-<%= form_for(@comment) do |f| %>
+<% if user_signed_in? %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_field :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= form_for(@comment) do |f| %>
+
+    <div class="field">
+      <%= f.label :message %><br />
+      <%= f.text_field :message %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   <% end %>
+<% end %>
 
 <p>
-    <b>comments</b>
-    <%= @comment %>
-    <ul>
-      <%= @comment.each do |c| %>
-      <li><%= c %></li>
-      <% end %>
-    </ul>
+  <b>Comments</b>
+  <ul>
+    <% @comments.each do |c| %>
+      <li><%= c.message %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
