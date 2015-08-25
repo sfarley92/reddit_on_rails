@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814173540) do
+ActiveRecord::Schema.define(version: 20150824150843) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150814173540) do
     t.datetime "updated_at",                null: false
     t.string   "ssl_enabled", default: "t"
     t.string   "title"
+    t.text     "comments"
   end
 
   create_table "users", force: :cascade do |t|
