@@ -9,7 +9,8 @@
 
 <p>
     <b>URL:</b>
-    <%= @link.url %>
+    <%= @link.url %> |
+    <%= link_to "Link", @link.url %>
 </p>
 
 <% if user_signed_in? %>
