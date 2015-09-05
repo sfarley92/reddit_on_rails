@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :links, :only => [:create, :new, :show]
   resources :comments, :only => [:create]
+  resources :chat
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
