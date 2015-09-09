@@ -15,7 +15,8 @@
 
 <% if user_signed_in? %>
 
-  <%= form_for(@comment) do |f| %>
+
+  <%= form_for(@link.comments.new) do |f| %>
 
     <div class="field">
       <%= f.label :message %><br />
@@ -31,12 +32,14 @@
 <p>
   <b>Comments</b>
   <ul>
-    <% @comments.each do |c| %>
+    <% @link.comments.each do |c| %>
       <li><%= c.message %></li>
     <% end %>
   </ul>
 </p>
 <% end %>
+
+
 
 <p>
   <%= link_to 'Homepage', pages_path %>
