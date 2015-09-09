@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :links, :only => [:create, :new, :show]
   resources :comments, :only => [:create]
   resources :chat
+  resources :votes
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
