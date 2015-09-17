@@ -7,6 +7,10 @@
 
 <% if user_signed_in? %>
 <h2>Welcome Wrecking Crew</h2>
+<b>This should only be visible if you are logged in</b>
+<p>-missing everyone whose emails aren't here<br>
+    -still gotta get the Chat to work
+</p>
 <ul>
   <% @users.each do |user| %>
   <li>  <%= user.email %> </li>
@@ -17,7 +21,7 @@
 
 <p></p>
 
-<%= link_to "Add a link", new_link_path %> |
+<b><%= link_to "Add a link", new_link_path %></b> |
 <%= link_to "Chat", new_chat_path %>
 
 <ul>
