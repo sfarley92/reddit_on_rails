@@ -1,0 +1,30 @@
+
+<% if user_signed_in? %>
+
+  <%= form_for(@chat.chat_message.new) do |f| %>
+
+    <div class="field">
+      <%= f.label :chat_message %><br />
+      <%= f.text_area :chat_message %>
+      <%= f.hidden_field :user_id, :value => @chat.user_id %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+<p>
+  <b>Comments</b>
+  <ul>
+    <% @chats.each do |c| %>
+      <li><%= c.chat_message %> -->
+          <%= c.email %></li>
+    <% end %>
+  </ul>
+</p>
+<% end %>
+
+<p>
+  <%= link_to 'Homepage', pages_path %>
+</p>

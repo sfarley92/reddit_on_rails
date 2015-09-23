@@ -1,15 +1,17 @@
 class ChatsController < ApplicationController
 
   def index
-    @chat = Chat.all
+    @chat = Chat.find(params[:id])
+    @chat_message = Chat.new
+    @chats_message = @chat.chat_message
   end
 
   def show
     @chat = Chat.find(params[:id])
   end
 
-  def create
-    @chat = current_user.create(chat_params)
+  def update
+    @chat = current_user.update(chat_params)
     redirect_to :back
   end
 
@@ -18,6 +20,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:chat_message, :email)
+    params.require(:chats).permit(:chat_message, :email)
   end
 end
