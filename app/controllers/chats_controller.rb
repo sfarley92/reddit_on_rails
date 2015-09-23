@@ -1,9 +1,8 @@
 class ChatsController < ApplicationController
 
   def index
-    @chat = Chat.find(params[:id])
-    @chat_message = Chat.new
-    @chats_message = @chat.chat_message
+    @chats = Chat.order('id DESC')
+    @chat = Chat.first_or_create
   end
 
   def show

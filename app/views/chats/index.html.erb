@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
 
-  <%= form_for(@chat.chat_message.new) do |f| %>
+  <%= form_for(@chat.chat_messages.new) do |f| %>
 
     <div class="field">
       <%= f.label :chat_message %><br />
