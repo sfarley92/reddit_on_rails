@@ -1,8 +1,13 @@
 class ChatsController < ApplicationController
 
   def index
-    @chats = Chat.order('id DESC')
+    @chats = Chat.order('id ASC')
     @chat = Chat.first_or_create
+    @ch = current_user.email
+  end
+
+  def create
+    redirect_to :back
   end
 
   def show
@@ -10,7 +15,7 @@ class ChatsController < ApplicationController
   end
 
   def update
-    @chat = current_user.update(chat_params)
+    @chat = Chat.create(chat_params)
     redirect_to :back
   end
 
@@ -19,6 +24,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chats).permit(:chat_message, :email)
+    params.require(:chat).permit(:chat_message, :email)
   end
 end
