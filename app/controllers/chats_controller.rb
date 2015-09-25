@@ -3,7 +3,6 @@ class ChatsController < ApplicationController
   def index
     @chats = Chat.order('id ASC')
     @chat = Chat.first_or_create
-    @ch = current_user.email
   end
 
   def create
