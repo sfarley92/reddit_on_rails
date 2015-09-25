@@ -1,5 +1,7 @@
 
+<% if !user_signed_in? %>
 <%= "Please Sign-in to View" %>
+<% end %>
 
 
 <% if user_signed_in? %>
