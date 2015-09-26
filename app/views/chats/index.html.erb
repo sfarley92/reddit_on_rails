@@ -10,8 +10,9 @@
   <b>Chat</b>
   <ul>
     <% @chats.each do |c| %>
-      <li><%= c.chat_message %> -->
-          <%= c.email %></li>
+      <li><%= c.created_at %> |
+          <%= c.email %> -->
+          <%= c.chat_message %></li>
     <% end %>
   </ul>
 </p>
