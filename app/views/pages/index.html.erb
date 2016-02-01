@@ -12,7 +12,10 @@
 <% if user_signed_in? %>
 **********************************************************
 <h2>Welcome Everyone</h2>
-<b>This should only be visible if you are logged in</b>
+<b>Howzit</b> <% @user.each do |user| %>
+<li>  <%= user.email %>
+<% end %>
+<br>
 <p>-everyone with an account is listed below<br>
     -BGAME and MIA homies<br>
     -please add links!<br>
