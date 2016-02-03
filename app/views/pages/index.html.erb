@@ -12,9 +12,8 @@
 <% if user_signed_in? %>
 **********************************************************
 <h2>Welcome Everyone</h2>
-<b>Howzit</b> <% @user.each do |user| %>
-<li>  <%= user.email %>
-<% end %>
+<b>Howzit
+<%= current_user.email %></b>!
 <br>
 <p>-everyone with an account is listed below<br>
     -BGAME and MIA homies<br>
