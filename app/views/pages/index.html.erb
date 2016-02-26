@@ -24,7 +24,7 @@
 <ul>
   <% @users.each do |user| %>
   <li>  <%= user.email %> |
-        <%= "Account Created: #{user.created_at}" %> </li>
+        <%= "Account Created: #{user.created_at.strftime("%m/%d/%y")}" %> </li>
   <% end %>
 </ul>
 
