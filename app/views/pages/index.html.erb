@@ -42,7 +42,8 @@
   <li>  <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
         <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
         <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
-        <%= link_to link.title, link.url, :target => "_blank" %></li>
+        <%= link_to link.title, link.url, :target => "_blank" %>
+        <%= link.created_at.strftime("%m/%d/%y") %></li>
         <%= link_to 'comments', link_path(:id => link.id) %>
         <p> </p>
   <% end %>
